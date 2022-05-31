@@ -1,0 +1,542 @@
+/*******************************************************
+ *
+ * Mobile styles and other media queries
+ *
+ *******************************************************/
+
+ 
+/* iPad(landscape) | iPad(landscape) | Galaxy Tab 4 (landscape) | Galaxy Tab 3 (landscape) */ 
+@media only screen and (max-width: 1199px) {
+
+    header.header .desktop-menu.container{
+        max-width: 100vw;
+    }
+
+    header.header.position-fixed .desktop-menu.container{
+        padding: 20px;
+    }
+    
+    section.home-featured-properties .section-title{
+        text-align: center;
+        margin-left: unset;
+        background-color: #fff;
+        color: var(--darker);
+    }
+
+    section.home-featured-properties .properties-slider .property-container{
+        width: 50vw;
+    }
+
+    .cta-main-container {
+        flex-direction: column;
+    }
+
+    .cta-main-container .cta-container{
+        height: 30vw;
+        background-position: center;
+         width: 100%;
+    }
+
+    .cta-content{
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .property-container .property-hover-info{
+        padding-top: 15px;
+    }
+
+    .property-hover-info .property-features .btn.btn-transparent{
+        padding: 13px 0;
+    }
+    
+    section.latest-news .blog-main-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .blog-main-container .blog-content, 
+    .blog-main-container .blog-highlight .blog-content{
+        flex-grow: 1;
+        width: 90vw;
+        height: 80vw;
+    }
+    .blog-text-content{
+        width: 100%;
+    }
+        
+    .cycloneslider-template-standard.cycloneslider-width-full .cycloneslider-slide img{
+		min-height: 100%;
+        height: auto;
+		object-fit: cover;
+	}
+ 		
+	section.home-slider .slider-content .cycloneslider-template-standard .cycloneslider-slides{
+		min-height: 100vh !important;
+		height: 100% !important;
+	}
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .welcome-content-text{
+        padding: 3.25vw 3.125vw 2.625vw 5.188vw;
+    }
+    
+    .cycloneslider-template-standard{
+        margin-bottom: unset !important;
+    }
+
+    .topfold-qsearch{
+        position: revert;
+        background-color: var(--darker);
+        padding: 45px 30px;
+    }
+
+    .topfold-qsearch .topfold-qsearch-title strong::before{
+        display: none;
+    }
+
+	.topfold-kw-logo{
+		display: none;
+	}
+
+    section.home-testimonials .cycloneslider-template-standard .cycloneslider-slides{
+        min-height: max(30vh, 320px);
+		height: 100% !important;
+    }
+}
+
+/* iPad(portrait) | Galaxy Tab 4(portrait)  */ 
+@media only screen and (max-width: 991px) {
+
+    .floating-smi{
+        display: none;
+    }
+    .fb-content-container{
+        width: 100%;
+        padding: 0 0 6.813vw 0;
+        flex-direction: column;
+    }
+
+    .fb-content-container .fb-feed{
+        width: 100%;
+    }
+
+    .fb-feed .content-text{
+        padding: max(1.250vw, 20px) max(1.188vw, 19px);
+    }
+
+    .facebook-wall .fb-container-header, .instagram-wall .ig-container-header{
+        flex-direction: column;
+    }
+    .facebook-wall .fb-container-header h2,
+    .instagram-wall .ig-container-header h2{
+        margin-bottom: 19px;
+    }
+
+    .fb-container-header a, .ig-container-header a{
+        margin-bottom: 40px;
+    }
+
+    .home-facebook-icon, 
+    .home-instagram-icon{
+        display: none;
+    }
+
+    .instagram-wall .ig-container-header{
+        border-bottom: 0;
+    }
+
+    .instagram-wall .ig-container{
+        margin-top: 0;
+    }
+
+    .footer-main-container{
+         flex-direction: column;   
+        width: 100%;
+        padding: 5.125vw 2.500vw;
+    }
+
+    .footer-main-container .footer-contact-title{
+        margin-bottom: 42px ;
+    }
+
+    .footer-main-container .footer-content-container{
+        width: 100%;
+    }
+
+	.footer-main-container .footer-contact-title{
+		font-size: max(1.875vw, 30px);
+	}
+
+	section.home-welcome .welcome-container{
+        flex-direction: column;
+    }
+
+    .welcome-content{
+        width: 100%;
+        flex-grow: 1;
+        text-align: center;
+        order: 1;
+    }
+
+    .welcome-content-button{
+        padding: 2.500vw 0 2.500vw 0;
+    }
+
+    .welcome-content-text {
+        padding: 3.25vw 5.188vw 2.625vw 5.188vw;
+        border-bottom: 0;
+    }
+
+	section.home-featured-properties .properties-slider .property-container{
+		width: 100%;
+		height: 80vw;
+	}
+
+	.property-container .property-hover-info{
+		padding-top: 75px;
+	}
+
+	.property-hover-info .property-features .btn.btn-transparent{
+		padding: 45px 0;
+	}
+
+
+    /* The following are used on inner pages. Please edit carefully. */
+	.inner {
+	    width: 100%;
+	}
+	#content-sidebar, #content-full {
+	    width: 100%;
+	}	
+	.outer{
+		width: 100%;
+		min-width: 100%;
+	}
+	#content-sidebar #content{
+		width: 100%;
+	}
+
+	section.home-communities .comunities-slider .community-container{
+		width: 100%;
+		height: 50vh;	
+	}
+}
+
+@media only screen and (max-width: 977px){
+	header.header{
+		border-bottom: 0;
+		border-top: 0;
+	}
+	
+	header.header .desktop-menu.container{
+		display: none;
+	}
+
+    .fb-feed img{
+        position: relative;
+        width: 100%;
+        cursor: pointer;
+        object-fit: cover;height: 300px;
+        object-position: 0 15%;
+    }
+
+    .testimonial-content {
+        padding: 0 15px;
+    }
+
+    .quote-bg::before {
+        top: -35px;
+        left: 65%;
+        width: 160px;
+        transform: unset;
+        -webkit-mask-size: 70%;
+        mask-size: 70%;
+    }
+
+    section.home-featured-properties .section-title{
+        margin-top: unset;
+        padding: 4vw 4.063vw 4vw 3.125vw;
+    }
+    
+    .divider{
+        display: none;
+    }
+
+    .properties-slider-control{
+        padding: 5.188vw 0;
+    }
+
+    .properties-slider-control .arrows{
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .properties-slider-control .btn.btn-primary{
+        order: 2;
+    }
+
+    .topfold-qsearch.show-controls .close-button, 
+    .topfold-qsearch .topfold-qsearch-title strong::before{
+        display: none;
+    }
+
+    .topfold-qsearch .qsearch-main-container, 
+    .topfold-qsearch .topfold-qsearch-subtitle{
+        display: block;
+    } 
+}
+
+/* Galaxy Tab 3(portrait) | Galaxy S5(landscape) */ 
+@media only screen and (max-width: 767px){
+    footer.footer .footer-nav-copyright ul#menu-main-menu{
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer-nav-copyright .menu-main-menu-container{
+        padding-left: 32px;
+        padding-top: 32px;
+		margin-bottom: 31px;
+    }
+    .footer-nav-copyright .menu-main-menu-container #menu-main-menu li.menu-item{
+        margin-bottom: 23px;
+    }  
+
+    .ip-banner .container{
+        width: 100%;
+    }
+	
+	footer.footer .footer-kw-logo{
+		display: none;
+	}
+
+	footer.footer .footer-top-logos{
+		margin-bottom: 37px;
+	}
+
+	footer.footer .footer-kw-logo-mobile{
+		display: block;
+		font-size: max(7.500vw, 120px);
+		padding-left: 32px;
+		text-align: left;
+		padding-bottom: 32px;
+    }
+
+	.cta-main-container .cta-container{
+		height: 100vw;
+	}
+}
+
+@media only screen and (max-width: 568px){
+    footer.footer .footer-smi ul li{
+        padding: 0 15px;
+    }
+
+    footer.footer .footer-smi ul{
+        justify-content: space-evenly;
+    }
+
+    .section-title, footer.footer .footer-logo, section.home-featured-properties .section-title {
+        font-size: max(5vw, 50px);
+    }
+
+    .properties-slider-control{
+        flex-direction: column;
+    }
+
+    section.latest-news .section-title{
+        margin-top: 50px;
+    }    
+
+    .quote-bg::before {
+        left: 50%;
+        transform: translateX(-40%);
+        top: -53px;
+    }
+
+    .topfold-logo span{
+        font-size: max(1.149vw, 16px);
+    }
+
+    .topfold-logo{
+        font-size: max(var(--font-size-main-header), 80px);
+    }
+
+    .property-hover-info .property-features .btn.btn-transparent{
+        padding: 20px 0;
+    }
+
+    .property-container .property-hover-info{
+        padding-top: 40px;
+    }
+
+    .topfold-qsearch .topfold-qsearch-subtitle{
+        letter-spacing: 0.2em;
+        font-size: max(0.542vw, 8.67px);
+        
+    }
+
+    .topfold-qsearch .topfold-qsearch-title strong{
+        font-size: max(1.563vw, 25px);
+    }
+
+    section.home-featured-properties .section-title{
+        padding: 10vw 4.063vw 10vw 3.125vw;
+    }    
+}
+
+/* Galaxy S5(portrait) | iPod Touch(landscape) | iPod Touch(portrait) */ 
+@media only screen and (max-width: 480px) {
+    footer.footer .footer-kw-logo-mobile{
+        font-size: max(7.500vw, 60px);
+    }
+
+    footer.footer .footer-smi ul li{
+        padding: 0;
+    }
+
+    .section-title, footer.footer .footer-logo, section.home-featured-properties .section-title{
+        font-size: max(5vw, 40px);
+    }
+
+    .property-container .property-hover-info{
+        padding-top: 20px;
+    }
+
+    .quote-bg::before {
+        left: 60%;
+        transform: translateX(-60%);
+        top: -53px;
+    }
+
+    .ig-container .ig-feed{
+        width: 100vw;
+    }
+
+    .ig-container .ig-feed img{
+        width: 90vw;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .quote-bg::before {
+        left: 100%;
+        transform: translateX(-50%);
+        top: -35px;
+        -webkit-mask-size: 50%;
+        mask-size: 50%;
+    }
+
+    .property-hover-info .price{
+        font-size: max(3.125vw, 40px);
+    }
+
+    .property-hover-info .property-features .address{
+        font-size: max(1.250vw, 14px);
+    }
+
+    .property-hover-info .property-features .bed, .property-hover-info .property-features .baths{
+        font-size: max(0.938vw, 14px);  
+    }
+
+    .property-hover-info .property-features .btn.btn-transparent{
+        font-size: max(var(--font-size-default), 11px);
+    }
+
+    .property-container .property-info .price{
+        font-size: max(3.125vw, 35px);
+    }
+
+    .property-container .property-info .price span{
+        font-size: max(var(--font-size-default), 12px);
+    }
+}
+
+@media only screen and (max-width: 368px){
+    .testimonial-content p{
+        font-size: max(1vw, 12px);
+    }
+
+    section.home-testimonials .cycloneslider-template-standard .cycloneslider-slides{
+        min-height: max(20vh, 245px);
+    }
+
+    section.home-testimonials .section-title{
+        margin-bottom: 10.813vw;
+    }
+
+    .topfold-logo {
+        font-size: max(var(--font-size-main-header), 70px);
+    }
+
+    .topfold-logo span {
+        font-size: max(1.149vw, 14px);
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (max-width: 340px){
+    .welcome-content-text{
+        font-size: max(0.875vw, 12px);
+    }
+
+    .property-hover-info .property-features .address{
+        margin-bottom: 15px;
+    }
+
+    .property-hover-info .property-features .bed, .property-hover-info .property-features .baths{
+        font-size: max(0.938vw, 10px);
+    }
+
+    .community-info span{
+        width: 100%;
+    }
+
+    .facebook-wall, .instagram-wall{
+        width: 100%;
+    }
+
+    .facebook-wall .fb-container-header, .instagram-wall .ig-container-header{
+        width: 100%;
+    }
+
+    .fb-container-header{
+        padding: 0;
+        width: 100%;
+    }
+
+    .btn.btn-primary{
+        font-size: max(0.875vw, 12px);
+    }
+
+    .ig-container .ig-feed{
+        width: 100%;
+    }
+
+    .community-button{
+        width: 100%;
+        border:0;
+        margin-left: unset;
+        text-align: center;
+        bottom: 30px;
+    }
+
+    .community-button a.btn-white{
+        padding: unset;
+        padding-top: 30px;
+    }
+
+    .quote-bg::before {
+        left: 50%;
+        transform: translateX(-25%);
+        top: -35px;
+        -webkit-mask-size: 50%;
+        mask-size: 50%;
+    }
+
+    
+
+}
