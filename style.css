@@ -44,6 +44,7 @@ TABLE OF CONTENTS
     --secondary-text-color: #fff;
     --background-color: #ffffff;
     --transition-linear: .3s linear;
+    --transition-linear-long: .8s linear;
     --transition-ease-out: .3s ease-out;
     --transition-ease-in: .3s ease-in;
     --transition-ease-in-long: .8s ease-in;
@@ -300,18 +301,17 @@ section.home-slider{
     margin-top: 17px;
 }
 
-    .topfold-qsearch .qsearch-main-container{
-        display: none;
-    }
+.topfold-qsearch .qsearch-container {
+    visibility: hidden;
+    max-height: 0;
+    transition: visibility .5s linear, max-height .5s linear; 
+    overflow: hidden;
+}
 
-    .topfold-qsearch.show-controls .qsearch-main-container{
-        display: block;
-    }
-
-    .topfold-qsearch.show-controls .topfold-qsearch-title strong::before,
-    .topfold-qsearch.show-controls .topfold-qsearch-subtitle{
-        display: none;
-    }
+.topfold-qsearch.show-controls .qsearch-container {
+    visibility: visible;
+    max-height: 100vh;
+}
 
     .topfold-qsearch .qsearch-main-container .qsearch-button{
         width: 100%;
@@ -332,14 +332,16 @@ section.home-slider{
 
     .topfold-qsearch .close-button{
         font-size: 16px;
-        display: none;
         position: absolute;
-        right: 3px;
+        right: -10px;
         top: 10px;
+        visibility: hidden;
+        transition: visibility .05s, right .05s;
     }
 
     .topfold-qsearch.show-controls .close-button{
-        display: inline-block;
+        right: 3px;
+        visibility: visible;
     }
         
         .topfold-qsearch .topfold-qsearch-title strong{
@@ -360,6 +362,18 @@ section.home-slider{
             height: 1px;
             background-color: var(--background-color);
             opacity: .5;
+        }
+
+        .topfold-qsearch .topfold-qsearch-title strong::before{
+            width: 121px;
+            transition: visibility .1s, width .1s; 
+            visibility: visible;
+        }
+
+        .topfold-qsearch.show-controls .topfold-qsearch-title strong::before{
+            width: 0;
+            visibility: hidden;
+            
         }
 
         .topfold-qsearch .qsearch-main-container .qsearch-button a::before{
@@ -556,6 +570,7 @@ section.home-featured-properties .properties-slider .property-container{
     cursor: pointer;
     position: relative;
     color: #fff;
+    transition: background-color 0.5 linear;
 }
 
 section.home-featured-properties .section-title{
@@ -571,12 +586,12 @@ section.home-featured-properties .section-title{
 }
 
 /* Container Hover */
-.property-container:hover, 
+
 .community-container:hover,
 .cta-container:hover, 
 .blog-main-container .blog-content:hover {
     background-color: rgba(255, 255, 255, 0.8) !important;
-    transition: all var(--transition-ease-in);
+    transition: background-color var(--transition-ease-out-long);
     background-blend-mode: overlay;
 }
 .fb-feed img,
@@ -594,7 +609,10 @@ section.home-featured-properties .section-title{
 .property-container .property-info{
     position: absolute;
     bottom: 25px;
-    left: 25px;
+    left: 25px; 
+    visibility: visible;
+    overflow: hidden;
+    transition: visibility .2s linear, bottom .2s linear;
 }
     .property-container .property-info .price{
         font-size: max(3.125vw, 50px);
@@ -612,28 +630,34 @@ section.home-featured-properties .section-title{
         }
 
 .property-container:hover .property-hover-info{
-    display: block;
+    visibility: visible;
+    height: 100%;
 }
 
 .property-container:hover .property-info{
-    display: none;
-    transition: all var(--transition-ease-out-long);
+    visibility: hidden;
+    bottom: -10px;
 }
-
+/* 
 .property-container:hover .property-hover-info div,
 .property-container:hover .property-hover-info p {
     transition: all var(--transition-ease-out-long);
-}
+} */
 
 .property-container .property-hover-info{
-    display: none;
+    visibility: hidden;
     text-align: center;
     padding-top: 75px;
     position: relative;
-    height: 100%;
+    height: 0;
     color: var(--darker);
+    transition: visibility .6s linear, height .6s linear; 
+    transition-delay: 100ms;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    
+    
 }
-
     .property-hover-info .price{
         font-size: max(3.125vw, 50px);
         margin-bottom: 22px;
@@ -926,11 +950,15 @@ section.latest-news .blog-main-container{
 
 .blog-main-container .blog-content:hover .blog-text-content{
     color: var(--darker);
+    height: 200px;
 }
 
 .blog-text-content {
 	position: absolute;bottom: 0;
     z-index: 999;
+    overflow: hidden;
+    height: 120px;
+    transition: height .3s linear;
 }
     .blog-text-content  .blog-date {
         padding: 0 max(1.25vw, 15px) 0;
@@ -949,10 +977,9 @@ section.latest-news .blog-main-container{
     .blog-text-content .blog-content-button {
         padding: max(1.25vw, 15px) max(1.063vw, 15px);
         width: 100%;
+        visibility: hidden;
+        transition: visibility .5s linear;
         border-top: 1px solid rgba(0, 0, 0, 0.2);
-        transition: all var(--transition-ease-in);
-        height: 0;
-        display: none;
     }
     .blog-text-content .blog-content-button a{
         letter-spacing: 0.4em;
@@ -967,9 +994,8 @@ section.latest-news .blog-main-container{
     }
 
     .blog-main-container .blog-content:hover .blog-content-button{
-        display: block;
-        height: 100%;
-        animation-name: fadeInDown;
+        visibility: visible;
+        /* animation-name: fadeInDown; */
     }
 
 /* Social Media Wall */
@@ -1146,8 +1172,7 @@ section.social-media-walls {
                 height: 100%;
             }
 
-section.footer-contact {
-    background-image: url(http://localhost/conversions/wp-content/themes/holbein-ap/images/footer-bg.png);
+section.footer-contact {    
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
@@ -1464,12 +1489,15 @@ textarea.control-transparent-boxed{
 @keyframes fadeInDown {
     from {
         opacity: 0;
-        transform: translate3d(0, -100%, 0)
+        transform: translate3d(0, -100%, 0);
     }
     to {
         opacity: 1;
         transform: none
     }
+}
+@keyframes slideUp {
+    
 }
 @keyframes fadeOutUp {
     from {
