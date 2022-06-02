@@ -328,11 +328,6 @@ section.home-slider{
         width: 100%;
     }
 
-    .topfold-qsearch.show-controls .qsearch-container{
-        visibility: visible;
-        max-height: 100vh;
-    }
-
     .topfold-qsearch .qsearch-main-container .qsearch-button .btn.btn-primary{
         color: #fff;
     }
