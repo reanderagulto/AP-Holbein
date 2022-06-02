@@ -324,14 +324,13 @@ section.home-slider{
     transition: visibility .5s linear, max-height .5s linear; 
     overflow: hidden;
 }
-
-.topfold-qsearch.show-controls .qsearch-container {
-    visibility: visible;
-    max-height: 100vh;
-}
-
     .topfold-qsearch .qsearch-main-container .qsearch-button{
         width: 100%;
+    }
+
+    .topfold-qsearch.show-controls .qsearch-container{
+        visibility: visible;
+        max-height: 100vh;
     }
 
     .topfold-qsearch .qsearch-main-container .qsearch-button .btn.btn-primary{
