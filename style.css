@@ -987,6 +987,7 @@ section.latest-news .blog-main-container{
     position: relative;
     transition: background-color var(--transition-linear);
     color: #fff;
+    overflow: hidden;
 }
 
 
@@ -1009,15 +1010,15 @@ section.latest-news .blog-main-container{
 
 .blog-main-container .blog-content:hover .blog-text-content{
     color: var(--darker);
-    height: 200px;
+    bottom: 0;
 }
 
 .blog-text-content {
-	position: absolute;bottom: 0;
+    position: absolute;
+    bottom: -3.7vw;
     z-index: 999;
     overflow: hidden;
-    height: 120px;
-    transition: height .3s linear;
+    transition: bottom .3s linear;
 }
     .blog-text-content  .blog-date {
         padding: 0 max(1.25vw, 15px) 0;
