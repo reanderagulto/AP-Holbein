@@ -1547,9 +1547,6 @@ textarea.control-transparent-boxed{
         transform: none
     }
 }
-@keyframes slideUp {
-    
-}
 @keyframes fadeOutUp {
     from {
         opacity: 1
