@@ -1,6 +1,7 @@
 <?php
 
 include "inc/libs/widgets.php";
+include "inc/libs/assets-import.php";
 
 add_action( 'widgets_init', 'register_ai_child_starter_theme_sidebars', 11 );
 
@@ -30,6 +31,13 @@ add_filter( 'nav_menu_link_attributes', 'ai_starter_theme_add_menu_link_attribut
  * Add image sizes
  */
 //add_image_size('cyclone-slide', 1024, 768, true);
+
+// Add 3rd Party Stylesheets
+import_stylesheets();
+
+// Add 3rd Party JS library
+import_scripts();
+
  
 /*
  * Define content width

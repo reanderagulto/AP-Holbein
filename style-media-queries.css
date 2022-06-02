@@ -63,17 +63,16 @@
     .blog-text-content{
         width: 100%;
     }
-        
-    .cycloneslider-template-standard.cycloneslider-width-full .cycloneslider-slide img{
-		min-height: 100%;
-        height: auto;
-		object-fit: cover;
-	}
- 		
-	section.home-slider .slider-content .cycloneslider-template-standard .cycloneslider-slides{
-		min-height: 100vh !important;
-		height: 100% !important;
-	}
+
+    .topfold-qsearch{
+        left: 2.063vw;
+        bottom: 5.438vw;
+    }
+
+    .topfold-kw-logo{
+        bottom: 7.563vw;
+    }
+    
 }
 
 
@@ -104,6 +103,21 @@
         min-height: max(30vh, 320px);
 		height: 100% !important;
     }
+
+    .topfold-qsearch .qsearch-container{
+        visibility: visible;
+        max-height: 100%;
+    }
+
+    .topfold-qsearch .close-button{
+        display: none;
+    }
+
+    section.home-featured-properties .section-title{
+        margin-top: unset;
+        padding: 4vw 4.063vw 4vw 3.125vw;
+    }
+    
 }
 
 /* iPad(portrait) | Galaxy Tab 4(portrait)  */ 
@@ -255,11 +269,6 @@
         mask-size: 70%;
     }
 
-    section.home-featured-properties .section-title{
-        margin-top: unset;
-        padding: 4vw 4.063vw 4vw 3.125vw;
-    }
-    
     .divider{
         display: none;
     }
@@ -286,6 +295,15 @@
     .topfold-qsearch .topfold-qsearch-subtitle{
         display: block;
     } 
+
+    .testi-nav.testi-prev,
+    .testi-nav.testi-next{
+        display: none;
+    }
+
+    .test-nav-mobile{
+        display: block;
+    }
 }
 
 /* Galaxy Tab 3(portrait) | Galaxy S5(landscape) */ 
