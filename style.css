@@ -144,6 +144,10 @@ body{
     -moz-osx-font-smoothing: grayscale; */
 }
 
+.textwidget.custom-html-widget{
+    font-size: 0;
+}
+
 /* Header */
 header.header{
     position: absolute;
@@ -165,6 +169,11 @@ header.header{
         background-color: var(--darker) !important;
     }
 
+    header.header.position-fixed .desktop-menu .site-header-logo{
+        display: block;
+
+    }
+
         header.header.position-fixed nav.navigation ul li{
             padding: 0px 1.813vw;
         }
@@ -180,9 +189,27 @@ header.header{
     header.header.fade-in-down{
         animation-name: fadeInDown;
     }
+    
 
-    header.header .desktop-menu .logo{
+    header.header .desktop-menu .site-header-logo{
         display: none;
+    }
+
+    
+    .site-header-logo a {
+        font-size: 3.487vw;
+        text-align: center;
+        color: var(--light);
+        line-height: .8;
+    }
+
+    .site-header-logo span{
+        display: block;
+        font-weight: 500;
+        font-size: .612vw;
+        text-transform: uppercase;
+        letter-spacing: .3em;
+        margin-top: 1vw;
     }
 
     header.header.scrolled .logo{
@@ -416,6 +443,9 @@ section.home-slider{
     z-index: 1000;
     align-items: center;
 }
+    .floating-smi-container a{
+        font-size: 0;
+    }
 
     .floating-smi-container a{
         display: flex; 
@@ -517,8 +547,11 @@ footer.footer {
     }
 
     footer.footer .footer-smi ul li > a{
+        font-size: 0;
+    }
+
+    footer.footer .footer-smi ul li > a{
         transition: var(--transition-ease-out);
-        font-size: 15px;
     }
 
     footer.footer .footer-smi ul li > a:hover{
@@ -1508,6 +1541,11 @@ span.wpcf7-form-control-wrap {
     text-align: center;
     width: 100%;
 }
+
+.hide-section-title{
+    display: none !important;
+}
+
 /*******************************************************
  *
  * 5. IP Styles

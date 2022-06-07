@@ -23,11 +23,9 @@
 
 	<header class="header">
 		<div class="desktop-menu container">			
-			<div class="logo">
-				<a href="<?php echo esc_url( home_url() ) ?>" class="site-name">
-					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Holbein Header Logo') ) : ?>
-					<?php endif ?>
-				</a>
+			<div class="site-header-logo">
+				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Holbein Header Logo') ) : ?>
+				<?php endif ?>
 			</div>
 			<nav class="navigation">
 				<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_id' => 'nav', 'theme_location' => 'primary-menu' ) ); ?>
