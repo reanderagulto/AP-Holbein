@@ -103,8 +103,9 @@ nav.navigation ul.sub-menu li{
 nav.navigation ul.sub-menu li > a {
     color: #000;
     display: block;
-    padding: 20px;
+    padding: 3px;
     letter-spacing: 0.08em;
+    line-height: 2.4;
 }
 #nav .sub-menu a:hover {
     background: none repeat scroll 0 0 #000;
@@ -232,7 +233,8 @@ nav.navigation {
             }
 
                 nav.navigation ul li > a:hover{
-                    color: var(--secondary);
+                    color: var(--font-color-title);
+                    opacity: 0.9;
                 }
 
 section.home-slider{
@@ -437,6 +439,15 @@ section.home-slider{
                     font-size: max(0.750vw, 12px);
                 }
 
+                .floating-smi a span.ai-font-phone::before, 
+                .floating-smi a span.ai-font-envelope::before {
+                    font-size: max(0.550vw, 9px);
+                }
+
+                .floating-smi a span.ai-font-envelope {
+                    margin-top: -3px;
+                }
+
     .floating-smi-container .floating-smi-divider {
         margin: 1.25vw 0px;
         content: '';
@@ -502,7 +513,7 @@ footer.footer {
     }
 
     footer.footer .footer-smi ul li {
-        padding: 0px 30px;
+        padding: 0px 25px;
     }
 
     footer.footer .footer-smi ul li > a{
@@ -514,8 +525,13 @@ footer.footer {
         color: var(--primary);
     }
 
-    footer.footer .footer-smi span::before {
-        font-size: 16px;
+    footer.footer .footer-smi ul li > a span::before {
+        font-size: max(1vw, 15px);
+    }
+    
+    footer.footer .footer-smi ul li > a span.ai-font-envelope::before, 
+    footer.footer .footer-smi ul li > a span.ai-font-phone::before{
+        font-size: max(0.65vw,11px);
     }
 
     footer.footer .footer-nav-copyright {
@@ -609,6 +625,7 @@ section.home-featured-properties .section-title{
     transition: background-color var(--transition-ease-out-long);
     background-blend-mode: overlay;
 }
+
 .fb-feed img,
 .ig-feed img{
     cursor: pointer;
@@ -924,6 +941,10 @@ span.testi-nav.testi-next.ai-font-arrow-i-n {
     .cta-main-container .cta-container:hover .cta-content{
         color: #000;
     }
+
+    .cta-main-container .cta-container:hover .cta-content h3::after{
+        background-color: #000;
+    }
     .cta-main-container .cta-container:hover::after {
         opacity: .2;
     }
@@ -949,6 +970,19 @@ span.testi-nav.testi-next.ai-font-arrow-i-n {
     
     .cta-content h3 {
         font-size: max(3.125vw, 50px);
+        padding-bottom: 28px;
+    }
+
+    .cta-content h3::after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        background-color: #fff;
+        width: 6.563vw;
+        height: 1px;
+        transform: translateX(-50%);
+        transition: all var(--transition-linear-long);
     }
     
     .cta-content {
@@ -979,8 +1013,8 @@ section.latest-news .blog-main-container{
 
 .blog-main-container .blog-content{
     background-size: cover;
-    width: 350px;
-    height: 350px;
+    width: max(21.875vw, 350px);
+    height: max(21.875vw, 350px);
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.2);
     background-blend-mode: overlay;
@@ -1413,11 +1447,11 @@ textarea.control-transparent-boxed{
 .quote-bg::before{
     content: '';
     position: absolute;
-    top: -70px;
+    top: -55px;
     left: 50%;
     z-index: -1;
-    width: 160px;
-    height: 123px;
+    width: 140px;
+    height: 121px;
     transform: translateX(-50%);
     -webkit-mask-image: url(images/quote-bg.png);
     mask-image: url(images/quote-bg.png);
@@ -1425,7 +1459,7 @@ textarea.control-transparent-boxed{
     mask-size: 100%;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
-    background: rgb(128 128 128 / 73%); 
+    background: #d1d1d1; 
 }
 
 .wpcf7 form.failed .wpcf7-response-output, .wpcf7 form.aborted .wpcf7-response-output {
