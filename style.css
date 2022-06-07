@@ -1251,6 +1251,7 @@ section.footer-contact {
         flex-grow: 1;
         flex-basis: 0;
         color: #fff;
+        position: relative;
     }
 
         .footer-main-container .footer-contact-title {
@@ -1378,10 +1379,26 @@ textarea.control-transparent-boxed{
 .form-submit-container .ai-font-paper-airplane-alt {
     color: var(--primary);
     font-size: 24px;
+    transition: all var(--transition-ease-in);
+}
+
+.form-submit-container .btn.btn-primary:hover{
+    color: var(--primary);
+}
+
+.form-submit-container .btn.btn-primary:hover .ai-font-paper-airplane-alt{
+    color: var(--light);
+}
+
+.form-submit-container .btn.btn-primary:focus {
+    background-color: unset;
+    color: var(--light);
+    border: 0;
+    box-shadow: unset;
 }
 
 .form-submit-container {
-    float: right;
+    text-align: right;
 }
 
 .form-submit-container .wpcf7-spinner {
@@ -1438,6 +1455,24 @@ textarea.control-transparent-boxed{
 .amh-navigation .amh-menu li:hover > a, .amh-navigation .amh-menu li.open > a{
     background: #808080;
     color: var(--light) !important;
+}
+
+span.wpcf7-form-control-wrap {
+    display: block;
+}
+
+.use-floating-validation-tip .wpcf7-not-valid-tip{
+    right: 0;
+    left: unset;
+    top: 0;
+    width: auto;
+    margin: 0;
+    font-family: var(--font-family-default);
+}
+
+.wpcf7-response-output {
+    text-align: center;
+    width: 100%;
 }
 /*******************************************************
  *
