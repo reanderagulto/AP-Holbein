@@ -314,6 +314,10 @@
 		padding: 45px 0;
 	}
 
+    .quote-bg::before {
+        left: 100%; 
+        transform: translateX(-100%);
+    }
 
     /* The following are used on inner pages. Please edit carefully. */
 	.inner {
