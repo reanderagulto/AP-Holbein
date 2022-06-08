@@ -418,7 +418,6 @@ section.home-slider{
         .topfold-qsearch.show-controls .topfold-qsearch-title strong::before{
             width: 0;
             visibility: hidden;
-            
         }
 
         .topfold-qsearch .qsearch-main-container .qsearch-button a::before{
@@ -429,6 +428,7 @@ section.home-slider{
         margin-top: 0.875vw;
         letter-spacing: 0.1em;
         text-transform: uppercase;
+        font-size: max(0.813vw, 13px);
     }
 
 /* Floating SMI */
@@ -472,10 +472,6 @@ section.home-slider{
                 .floating-smi a span.ai-font-phone::before, 
                 .floating-smi a span.ai-font-envelope::before {
                     font-size: max(0.550vw, 9px);
-                }
-
-                .floating-smi a span.ai-font-envelope {
-                    margin-top: -3px;
                 }
 
     .floating-smi-container .floating-smi-divider {
@@ -898,6 +894,11 @@ section.home-testimonials .section-title{
     padding: 0 7.500vw;
 }
 
+span.testi-nav.testi-next.ai-font-arrow-i-n,
+span.testi-nav.testi-prev.ai-font-arrow-i-p{
+    font-size: max(1vw, 16px);
+}
+
 span.testi-nav.testi-prev.ai-font-arrow-i-p {
     position: absolute;
     top: 22%;
@@ -1107,6 +1108,7 @@ section.latest-news .blog-main-container{
         visibility: hidden;
         transition: visibility .5s linear;
         border-top: 1px solid rgba(0, 0, 0, 0.2);
+        font-size: max(0.875vw, 15px);
     }
     .blog-text-content .blog-content-button a{
         letter-spacing: 0.4em;
@@ -1545,6 +1547,12 @@ span.wpcf7-form-control-wrap {
 .hide-section-title{
     display: none !important;
 }
+
+.captcha-image, 
+.wpcf7 form .wpcf7-response-output{
+    font-size: 16px;
+}
+
 
 /*******************************************************
  *
