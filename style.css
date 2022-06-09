@@ -256,12 +256,11 @@ nav.navigation {
                 letter-spacing: 0.12em;
                 padding: 0.375vw;
                 border-right: solid 1px var(--background-color);
-                transition: var(--transition-ease-out);
+                transition: opacity var(--transition-linear-long)
             }
 
                 nav.navigation ul li > a:hover{
-                    color: var(--font-color-title);
-                    opacity: 0.9;
+                    opacity: .65;
                 }
 
 section.home-slider{
@@ -347,19 +346,13 @@ section.home-slider{
     margin-top: 17px;
 }
 
-.topfold-qsearch .qsearch-container {
-    visibility: hidden;
-    max-height: 0;
-    transition: visibility .5s linear, max-height .5s linear; 
-    overflow: hidden;
-}
     .topfold-qsearch .qsearch-main-container .qsearch-button{
         width: 100%;
     }
 
-    .topfold-qsearch.show-controls .qsearch-container{
-        visibility: visible;
-        max-height: 100vh;
+    .topfold-qsearch.show-controls .topfold-qsearch-container{
+        opacity: 1;
+        bottom: 0;
     }
 
     .topfold-qsearch .qsearch-main-container .qsearch-button .btn.btn-primary{
@@ -378,18 +371,17 @@ section.home-slider{
     .topfold-qsearch .close-button{
         font-size: 16px;
         position: absolute;
-        right: -10px;
+        right: 3px;
         top: 10px;
         visibility: hidden;
-        transition: visibility .05s, right .05s;
     }
 
     .topfold-qsearch.show-controls .close-button{
-        right: 3px;
         visibility: visible;
     }
         
-        .topfold-qsearch .topfold-qsearch-title strong{
+        .topfold-qsearch .topfold-qsearch-title strong, 
+        .topfold-qsearch .topfold-qsearch-container-title strong{
             display: inline-block;
             position: relative;
             font-size: max(2.500vw, 40px);
@@ -398,7 +390,7 @@ section.home-slider{
         }
 
         .topfold-qsearch .topfold-qsearch-title strong::before,
-        .topfold-qsearch .qsearch-main-container .qsearch-button a::before {
+        .topfold-qsearch .qsearch-main-container .qsearch-button a::before{
             content: '';
             position: absolute;
             top: 50%;
@@ -409,19 +401,27 @@ section.home-slider{
             opacity: .5;
         }
 
-        .topfold-qsearch .topfold-qsearch-title strong::before{
-            width: 121px;
-            transition: visibility .1s, width .1s; 
-            visibility: visible;
-        }
-
-        .topfold-qsearch.show-controls .topfold-qsearch-title strong::before{
-            width: 0;
-            visibility: hidden;
+        .topfold-qsearch .topfold-qsearch-container{
+            position: absolute;
+            bottom: -50vw;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            opacity: 0;
+            transition: bottom var(--transition-linear);
+            transition-property: opacity,bottom;
         }
 
         .topfold-qsearch .qsearch-main-container .qsearch-button a::before{
             width: 100%;
+        }
+
+        .topfold-qsearch .topfold-qsearch-button{
+            transition: var(--transition-opacity);
+        }
+
+        .topfold-qsearch.show-controls .topfold-qsearch-button{
+            opacity: 0;
         }
     
     .topfold-qsearch .topfold-qsearch-subtitle {
@@ -430,6 +430,7 @@ section.home-slider{
         text-transform: uppercase;
         font-size: max(0.813vw, 13px);
     }
+
 
 /* Floating SMI */
 .floating-smi-container{
@@ -569,9 +570,13 @@ footer.footer {
 
     footer.footer .footer-nav-copyright ul#menu-main-menu {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
+        flex-wrap: wrap;
     }
-    
+
+    footer.footer .footer-nav-copyright ul#menu-main-menu li{
+        padding: 0 max(0.25vw,20px);
+    }
         footer.footer .footer-nav-copyright ul#menu-main-menu li a{
             text-transform: uppercase;
             letter-spacing: 0.2em;
@@ -636,7 +641,7 @@ section.home-featured-properties .properties-slider .property-container{
 }
 
 section.home-featured-properties .section-title{
-    font-size: max(5vw, 80px);
+    font-size: max(4.5vw, 25px);
     color: #fff;
     background-color: var(--darker);
     padding: 4vw 4.063vw 3.125vw;
@@ -673,9 +678,9 @@ section.home-featured-properties .section-title{
     bottom: 25px;
     left: 25px; 
     visibility: visible;
+    opacity: 1;
     overflow: hidden;
-    transition: bottom .3s ease-in;
-    transition-delay: 300ms;
+    transition: opacity .3s ease-out;
 }
     .property-container .property-info .price{
         font-size: max(3.125vw, 50px);
@@ -694,11 +699,11 @@ section.home-featured-properties .section-title{
 
 .property-container:hover .property-hover-info{
     visibility: visible;
-    top: 0;
+    opacity: 1;
 }
 
 .property-container:hover .property-info{
-    bottom: -50%;
+    opacity: 0;
 }
 /* 
 .property-container:hover .property-hover-info div,
@@ -709,12 +714,13 @@ section.home-featured-properties .section-title{
 .property-container .property-hover-info{
     visibility: hidden;
     text-align: center;
+    opacity: 0;
     padding-top: 75px;
     position: relative;
     height: 100%;
-    top: -100%;
+    top: 0;
     color: var(--darker);
-    transition: visibility .6s linear, top .6s linear; 
+    transition: opacity .6s linear; 
     transition-delay: 100ms;
     background-color: rgba(255, 255, 255, 0.8);
     
@@ -820,7 +826,11 @@ section.home-welcome .welcome-container{
     }
 
     .welcome-image img {
+        display: block;
         width: 100%;
+        object-fit: cover;
+        height: 100%;
+        object-position: center;
     }
 
 section.home-communities .comunities-slider .community-container{
@@ -855,7 +865,7 @@ section.home-communities .comunities-slider .community-container{
         transition: color 0.2s;
     }
         .community-info span{
-            font-size: max(var(--font-size-section-header), 50px);
+            font-size: max(var(--font-size-section-header), 25px);
             word-spacing: 100vw;
         }
 
@@ -1003,7 +1013,7 @@ span.testi-nav.testi-next.ai-font-arrow-i-n {
     }
     
     .cta-content h3 {
-        font-size: max(3.125vw, 50px);
+        font-size: max(3.125vw, 25px);
         padding-bottom: 28px;
     }
 
@@ -1022,9 +1032,14 @@ span.testi-nav.testi-next.ai-font-arrow-i-n {
     .cta-content {
         position: absolute;
         top: 50%;
-        transform: translate(-35%, -50%);
+        left: 0;
+        right: 0;
+        z-index: 3;
+        padding-bottom: 1.813vw;
+        transform: translateY(-50%);
+        font-size: max(3.125vw,25px);
+        color: var(--light);
         text-align: center;
-        left: 40%;
         transition: all var(--transition-linear-long);
     }
 
@@ -1034,14 +1049,13 @@ section.latest-news{
 }
 
 section.latest-news .section-title{
-    margin-bottom: 84px;
+    margin-bottom: 50px;
 }
 
 section.latest-news .blog-main-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 4vw;
     margin-bottom: 1.500vw;
 }
 
@@ -1183,6 +1197,12 @@ section.social-media-walls {
 }
 
 .home-instagram-icon{
+    margin-right: 1.125vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max(2.563vw,41px);
+    height: max(2.563vw,41px);
     font-size: max(1.8vw,24px);
 }
 
@@ -1276,18 +1296,13 @@ section.social-media-walls {
 
 .instagram-wall .ig-container-header,
 .instagram-wall .ig-container{
-    padding: 0 3.125vw 1.563vw 3.125vw;
-}
-
-.instagram-wall .ig-container-header {
-    border-bottom: 1px solid rgb(51 51 51 / 50%);
+    padding: 0 3.125vw 0.563vw 3.125vw;
 }
 
     .instagram-wall .ig-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 76px;
     }
 
         .ig-container .ig-feed{
@@ -1301,30 +1316,47 @@ section.social-media-walls {
                 height: 100%;
             }
 
-section.footer-contact {    
-    background-color: rgba(0, 0, 0, 0.4);
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
+section.footer-contact {   
+    display: block;
+    position: relative;
+    padding: max(9.375vw,70px) 0; 
+    background: url("./images/footer-bg.png") no-repeat center;
     background-size: cover;
 }
-            
 
-.footer-main-container {
+section.footer-contact::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: var(--darker);
+    opacity: .6;
+}
+            
+.footer-main-container .container {
+    position: relative;
+    z-index: 1;
+    width: max(64.625vw,1034px);
+}
+
+.footer-main-container.container .row{
     display: flex;
-    align-items: self-start;
-    justify-content: space-around;
-    flex-wrap: wrap;padding: 8.125vw 0px;
-    }
+}
 
     .footer-main-container .footer-content-container {
-        flex-grow: 1;
-        flex-basis: 0;
         color: #fff;
         position: relative;
+        width: 50%;
+        padding: 0 max(0.938vw,15px);
     }
 
         .footer-main-container .footer-contact-title {
             font-size: max(var(--font-size-section-header), 80px);
+            width: 50%;
+            padding: 0 max(0.938vw,15px);
         }
         
         .footer-form .btn.btn-primary {
@@ -1372,7 +1404,7 @@ section.footer-contact {
 }
 
 .section-title{
-    font-size: max(5vw, 80px);
+    font-size: max(4.5vw, 25px);
     color: var(--dark);
     display: block;
     line-height: .8;
@@ -1388,11 +1420,11 @@ section.footer-contact {
     color: #fff;
     border: 0; 
     box-shadow: unset;
-    margin-bottom: 21px;
     border-bottom: 1px solid;
     border-radius: unset;
-    font-size: 13px;
     text-transform: uppercase;
+    font-size: max(0.875vw,14px);
+    margin-bottom: max(2.5vw,20px);
 }
 
 .control-transparent::placeholder,
@@ -1537,6 +1569,7 @@ span.wpcf7-form-control-wrap {
     width: auto;
     margin: 0;
     font-family: var(--font-family-default);
+    font-size: 16px;
 }
 
 .wpcf7-response-output {
@@ -1551,6 +1584,14 @@ span.wpcf7-form-control-wrap {
 .captcha-image, 
 .wpcf7 form .wpcf7-response-output{
     font-size: 16px;
+}
+
+.footer-contact .wpcf7-response-output {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    right: 0;
+    margin: 0!important;
 }
 
 

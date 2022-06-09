@@ -4,9 +4,10 @@
 			</div><!-- end of #inner-page-wrapper -->
 		<?php endif ?>
 
-		
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Holbein Footer Top Contact') ) : ?>
-		<?php endif ?>
+		<section class="footer-contact">
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Holbein Footer Top Contact') ) : ?>
+			<?php endif ?>
+		</section>
 	</main>
 	
 	

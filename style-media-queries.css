@@ -7,12 +7,7 @@
  @media only screen and (max-width: 1440px){
     .topfold-qsearch{
         bottom: 3.438vh;
-    }
-    
-    .topfold-qsearch.show-controls .topfold-qsearch-subtitle{
-        margin-top: unset;
-        visibility: hidden;
-        height: 0;
+        left: 3.063vw;
     }
     
     .control-transparent-boxed{
@@ -21,7 +16,9 @@
         font-size: 11px;
     }
     
-    .topfold-qsearch .topfold-qsearch-title strong{
+    .topfold-qsearch .topfold-qsearch-title strong, 
+    .topfold-qsearch .topfold-qsearch-container-title strong
+    {
         font-size: max(2.500vw, 30px);
     }
     
@@ -109,28 +106,6 @@
         padding: 20px;
     }
     
-    section.home-featured-properties .section-title{
-        text-align: center;
-        margin-left: unset;
-        background-color: #fff;
-        color: var(--darker);
-    }
-
-    section.home-featured-properties .properties-slider .property-container{
-        width: 100vw;
-        height: 50vh;
-    }
-
-    .cta-main-container {
-        flex-direction: column;
-    }
-
-    .cta-main-container .cta-container{
-        height: 70vh;
-        background-position: center;
-        width: 100vw;
-    }
-
     .cta-content{
         left: 50%;
         transform: translate(-50%, -50%);
@@ -143,28 +118,28 @@
     .property-hover-info .property-features .btn.btn-transparent{
         padding: 13px 0;
     }
-    
-    section.latest-news .blog-main-container{
-        flex-direction: column;
-        align-items: center;
-    }
-    .blog-main-container .blog-content, 
-    .blog-main-container .blog-highlight .blog-content{
-        flex-grow: 1;
-        width: 90vw;
-        height: 80vw;
-    }
-    .blog-text-content{
-        width: 100%;
-    }
 
     .topfold-qsearch{
         left: 2.063vw;
-        bottom: 5.438vw;
+        bottom: 3.438vw;
     }
 
     .topfold-kw-logo{
         bottom: 7.563vw;
+    }
+
+    section.latest-news .blog-main-container{
+        padding: 0 45px;
+    }
+
+    .blog-main-container .blog-content {
+        width: max(19.375vw, 290px);
+        height: max(19.375vw, 310px);
+    }
+
+    .blog-main-container .blog-highlight .blog-content {
+        height: 100%;
+        width: max(26.250vw, 300px);
     }
     
 }
@@ -179,32 +154,9 @@
         margin-bottom: unset !important;
     }
 
-    .topfold-qsearch{
-        position: revert;
-        background-color: var(--darker);
-        padding: 45px 30px;
-    }
-
-    .topfold-qsearch .topfold-qsearch-title strong::before{
-        display: none;
-    }
-
-	.topfold-kw-logo{
-		display: none;
-	}
-
     section.home-testimonials .cycloneslider-template-standard .cycloneslider-slides{
         min-height: max(30vh, 320px);
 		height: 100% !important;
-    }
-
-    .topfold-qsearch .qsearch-container{
-        visibility: visible;
-        max-height: 100%;
-    }
-
-    .topfold-qsearch .close-button{
-        display: none;
     }
 
     section.home-featured-properties .section-title{
@@ -266,7 +218,7 @@
     .footer-main-container{
          flex-direction: column;   
         width: 100%;
-        padding: 5.125vw 2.500vw;
+        padding: 7.125vw 7.5vw;
     }
 
     .footer-main-container .footer-contact-title{
@@ -315,8 +267,9 @@
 	}
 
     .quote-bg::before {
-        left: 100%; 
+        left: 70%;
         transform: translateX(-100%);
+        top: -75px;
     }
 
     /* The following are used on inner pages. Please edit carefully. */
@@ -336,7 +289,7 @@
 
 	section.home-communities .comunities-slider .community-container{
 		width: 100%;
-		height: 50vh;	
+        height: 50vh;
 	}
 
     
@@ -357,10 +310,122 @@
         width: 100%;
     }
 
-}
+    .section-title, 
+    footer.footer .footer-logo, 
+    section.home-featured-properties .section-title {
+        font-size: max(4.5vw, 30px);
+    }
 
-@media only screen and (max-width: 977px){
-	header.header{
+    .blog-main-container .blog-content, .blog-main-container .blog-highlight .blog-content{
+        width: 80vw;
+        height: 60vw;
+    }
+
+    .community-info{
+        margin: 0;
+    }
+
+    .community-info span {
+        position: absolute;
+        top: 15.125vh;
+        left: 6.250vw;
+    }
+
+    .properties-slider-control{
+        flex-direction: column;
+    }
+
+    .divider{
+        display: none;
+    }
+
+    .properties-slider-control{
+        padding: 5.188vw 0;
+    }
+
+    .properties-slider-control .arrows{
+        margin-top: 20px;
+    }
+
+    .footer-main-container.container .row{
+        flex-direction: column;
+    }
+
+    section.home-featured-properties .section-title{
+        text-align: center;
+        margin-left: unset;
+        background-color: #fff;
+        color: var(--darker);
+    }
+    
+    section.home-featured-properties .properties-slider .property-container{
+        width: 100vw;
+        height: 50vh;
+    }
+    
+    .cta-main-container {
+        flex-direction: column;
+    } 
+    
+    .cta-main-container .cta-container{
+        height: 50vh;
+        background-position: center;
+        width: 100vw;
+    }
+    
+    section.latest-news .blog-main-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .blog-main-container .blog-content, 
+    .blog-main-container .blog-highlight .blog-content{
+        flex-grow: 1;
+        width: 90vw;
+        height: 80vw;
+    }
+    .blog-text-content{
+        width: 100%;
+    }
+    
+    .topfold-qsearch .topfold-qsearch-button{
+        display: none;
+    }
+    
+    .topfold-qsearch{
+        position: revert;
+        background-color: var(--darker);
+        padding: 45px 15.125vw;
+    }
+
+    .topfold-qsearch .topfold-qsearch-container{
+        position: revert;
+        opacity: 1;
+
+    }
+    
+    .topfold-kw-logo{
+        display: none;
+    }
+    
+    
+    .topfold-qsearch .topfold-qsearch-title strong::before{
+        display: none;
+    }
+    
+    .topfold-qsearch .qsearch-container{
+        visibility: visible;
+        max-height: 100%;
+    }
+    
+    .topfold-qsearch .close-button{
+        display: none;
+    }
+
+    section.latest-news .blog-main-container{
+        padding: unset;
+    }
+    header.header{
 		border-bottom: 0;
 		border-top: 0;
 	}
@@ -368,6 +433,9 @@
 	header.header .desktop-menu.container{
 		display: none;
 	}
+}
+
+@media only screen and (max-width: 977px){
 
     .fb-feed img{
         position: relative;
@@ -382,29 +450,12 @@
     }
 
     .quote-bg::before {
-        top: -35px;
-        left: 65%;
+        top: -55px;
+        left: 40%;
         width: 160px;
         transform: unset;
         -webkit-mask-size: 70%;
         mask-size: 70%;
-    }
-
-    .divider{
-        display: none;
-    }
-
-    .properties-slider-control{
-        padding: 5.188vw 0;
-    }
-
-    .properties-slider-control .arrows{
-        order: 1;
-        margin-bottom: 20px;
-    }
-
-    .properties-slider-control .btn.btn-primary{
-        order: 2;
     }
 
     .topfold-qsearch.show-controls .close-button, 
@@ -425,23 +476,18 @@
     .test-nav-mobile{
         display: block;
     }
+
+    .container.testimonial-button{
+        border-top: 0;
+    }
 }
 
 /* Galaxy Tab 3(portrait) | Galaxy S5(landscape) */ 
 @media only screen and (max-width: 767px){
-    footer.footer .footer-nav-copyright ul#menu-main-menu{
-        flex-direction: column;
-        text-align: left;
-    }
 
-    .footer-nav-copyright .menu-main-menu-container{
-        padding-left: 32px;
-        padding-top: 32px;
-		margin-bottom: 31px;
+    footer.footer .footer-nav-copyright ul#menu-main-menu li{
+        padding: 7px;
     }
-    .footer-nav-copyright .menu-main-menu-container #menu-main-menu li.menu-item{
-        margin-bottom: 23px;
-    }  
 
     .ip-banner .container{
         width: 100%;
@@ -455,12 +501,12 @@
 		margin-bottom: 37px;
 	}
 
-	footer.footer .footer-kw-logo-mobile{
-		display: block;
-		font-size: max(7.500vw, 120px);
-		padding-left: 32px;
-		text-align: left;
-		padding-bottom: 32px;
+    footer.footer .footer-kw-logo-mobile {
+        display: block;
+        text-align: center;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        font-size: 7.5vw;
     }
 
 	.cta-main-container .cta-container{
@@ -479,10 +525,6 @@
 
     footer.footer .footer-smi ul{
         justify-content: space-evenly;
-    }
-
-    .section-title, footer.footer .footer-logo, section.home-featured-properties .section-title {
-        font-size: max(5vw, 50px);
     }
 
     .properties-slider-control{
@@ -538,10 +580,6 @@
 
     footer.footer .footer-smi ul li{
         padding: 0;
-    }
-
-    .section-title, footer.footer .footer-logo, section.home-featured-properties .section-title{
-        font-size: max(5vw, 40px);
     }
 
     .property-container .property-hover-info{
@@ -632,10 +670,6 @@
 
     .property-hover-info .property-features .bed, .property-hover-info .property-features .baths{
         font-size: max(0.938vw, 10px);
-    }
-
-    .community-info span{
-        width: 100%;
     }
 
     .facebook-wall .fb-container-header, .instagram-wall .ig-container-header{

@@ -68,7 +68,7 @@
 	}
 
 	function quickSearchClicked(){
-		$('.topfold-qsearch-title').on('click', () =>{
+		$('.topfold-qsearch-button').on('click', () =>{
 			$('.topfold-qsearch').addClass('show-controls');
 		});
 
