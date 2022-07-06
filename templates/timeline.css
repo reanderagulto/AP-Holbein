@@ -1,0 +1,240 @@
+/* 
+Project: Project Timeline Tracker.
+Description: CSS file for project timeline tracker template.
+Filename: timeline.css
+Author: Oqulo
+Version: 1.0
+*/
+
+/* 
+TABLE OF CONTENTES
+
+1. Variables
+2. Custom CSS
+3. Media Queries
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*******************************************************
+ *
+ * 1. Variables
+ *
+ *******************************************************/
+
+
+:root{
+    --font-poppins: 'Poppins', sans-serif;
+    --font-roboto: 'Roboto', sans-serif;
+    --font-timeline-default: var(--font-roboto), sans-serif;
+    --font-timeline-title: var(--font-poppins), sans-serif;
+    --font-size-default: 14px;
+    --font-size-title: 18px;
+
+    --primary-color:rgb(0 155 187/1);
+    --primary-title-color: #f87115;
+    --light-primary: rgba(0, 156, 187, 0.307);
+    --secondary-color: #6b7280;
+    --darker-secondary: rgb(55 65 81/1);
+    --light-color: #fff;
+    --dark-color: #000;
+}
+
+/*******************************************************
+ *
+ * 2. Custom CSS
+ *
+ *******************************************************/
+body{
+    font-family: var(--font-timeline-default);
+    background: var(--light-color);
+    margin: 0;
+}
+
+
+section.timeline {
+    padding: 10px 20px;
+}
+
+    section.timeline .timeline-header {
+        position: relative;
+        display: block;
+        text-align: center;   
+    }
+
+        section.timeline .timeline-header h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-family: var(--font-timeline-title);
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary-title-color);
+        }
+
+        section.timeline .timeline-header p.subtitle {
+            font-size: 16px;
+            font-family: var(--font-timeline-default);
+        }
+
+    section.timeline .timeline-content {
+        margin-top: 20px;
+        display: block;
+        position: relative;
+    }
+
+        .timeline-content ul.main-progress > li {
+            display: flex;
+            position: relative;
+            padding-bottom: 30px;
+            opacity: 0.45;
+            cursor: pointer;
+            transition: all 0.3s linear;
+        }
+
+        .timeline-content ul.main-progress > li:last-of-type .progress-line{
+            display: none;
+        }
+
+        .timeline-content ul.main-progress > li:hover {
+            opacity: 1;
+        }
+
+            .timeline-content ul.main-progress > li span.progress-icon {
+                height: 75px;
+                width: 75px;
+                font-size: 24px;
+                font-weight: 600;
+                border: 6px solid var(--primary-color);
+                padding: 19px;
+                border-radius: 50%;
+                margin: 0 25px 30px 0;
+                background-color: #3cc;
+                color: var(--light-color);
+                z-index: 10;
+            }
+
+            .timeline-content ul.main-progress > li .progress-content {
+                display: flex;
+                flex-direction: column;
+            }
+
+                .progress-content .progress-time {
+                    font-size: 12px;
+                    font-style: italic;
+                    font-weight: 300;
+                    color: var(--secondary-color);
+                    margin-bottom: 7px;
+                }
+
+                .progress-title{
+                    font-weight: 600;
+                    font-family: var(--font-timeline-title);
+                    margin-bottom: 15px;
+                    color: var(--primary-title-color);
+                }
+
+                .timeline-content ul.main-progress > li > .progress-content > .progress-title {
+                    font-size: 24px;
+                    text-transform: uppercase;
+                }
+
+                .timeline-content ul.main-progress > li .progress-content > ul.sub-progress > li > .progress-title {
+                    font-size: 20px;
+                }
+                
+                .timeline-content ul.main-progress > li .progress-content > ul.sub-progress > li > ul > li .progress-title {
+                    font-size: 16px;
+                }
+                
+                .timeline-content ul.main-progress > li > .progress-content p{
+                    font-size: 16px; 
+                    font-weight: 300; 
+                    margin-bottom: 15px;
+                }
+
+                    .timeline-content ul.sub-progress {
+                        margin-top: 20px
+                    }
+
+                        .timeline-content ul.sub-progress > li{
+                            display: flex;
+                            flex-direction: column;
+                            margin-bottom: 20px;
+                            position: relative;
+                        }
+
+                            ul.main-progress > li .progress-content > ul.sub-progress > li:before{
+                                position: absolute;
+                                content: "";
+                                width: 6%;
+                                height: 6px;
+                                top: 10%;
+                                left: -8%;
+                                background: var(--primary-color);
+                            }
+
+                            .timeline-content ul.sub-progress > li > ul{
+                                margin-left: 40px;
+                            }
+
+                            
+                            
+
+.progress-line {
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: var(--primary-color);
+    top: 0;
+    left: 3%;
+    z-index: -2;
+}
+
+/*******************************************************
+ *
+ * 3. Media Queries
+ *
+ *******************************************************/
+@media only screen and (max-width: 1199px){
+    .progress-line{
+        left: 4%;
+    }
+}
+
+@media only screen and (max-width: 991px){
+    .progress-line{
+        left: 5%;
+    }
+
+    ul.main-progress > li .progress-content > ul.sub-progress > li:before{
+        left: -11%;
+        width: 9%;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    ul.main-progress > li .progress-content > ul.sub-progress > li:before{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 568px){
+    .progress-line{
+        display: none;
+    }
+
+    .timeline-content ul.main-progress > li{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .timeline-content ul.main-progress > li span.progress-icon{
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .timeline-content ul.sub-progress > li > ul{
+        margin-left: unset;
+    }
+}
