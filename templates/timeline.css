@@ -55,6 +55,7 @@ body{
 
 section.timeline {
     padding: 10px 20px;
+    margin-top: 50px;
 }
 
     section.timeline .timeline-header {
